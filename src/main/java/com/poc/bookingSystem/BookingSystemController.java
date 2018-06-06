@@ -37,7 +37,7 @@ public class BookingSystemController {
 		 return responseDTO;
 	    }
 	/* save and update the booking
-	 * for save meetingId should */
+	 * for update meetingId should be passed*/
 	@RequestMapping(value="/book", method=RequestMethod.POST)
 	 public ResponseDTO saveMeetingDetails(@RequestBody BookingRequestDTO bookingRequestDTO) throws BookingSystemException, ParseException {
 		ResponseDTO responseDTO = null;

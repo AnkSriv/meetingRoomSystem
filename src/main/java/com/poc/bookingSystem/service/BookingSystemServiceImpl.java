@@ -126,9 +126,14 @@ public class BookingSystemServiceImpl implements IBookingSystemService{
 	@Override
 	public ResponseDTO deleteMeetingDetails(Long meetingId) {
 		ResponseDTO responseDTO = new ResponseDTO();
-		MeetingDetails meetingDetailObj= iMeetingDetailsRepo.findOne(meetingId);
-		iMeetingDetailsRepo.delete(meetingDetailObj);
-		responseDTO.setMsg("Deleted Successfully");
+		try{
+			MeetingDetails meetingDetailObj= iMeetingDetailsRepo.findOne(meetingId);
+			iMeetingDetailsRepo.delete(meetingDetailObj);
+			responseDTO.setMsg("Deleted Successfully");
+		}catch(Exception e){
+			responseDTO.setError(e.getMessage());
+		}
+		
 		return responseDTO;
 	}
 	
