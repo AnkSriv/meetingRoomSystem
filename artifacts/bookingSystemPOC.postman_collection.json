@@ -1,0 +1,127 @@
+{
+	"info": {
+		"_postman_id": "7432f3c1-85c8-487c-875f-51eb2c7c28a1",
+		"name": "bookingSystemPOC",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "fetchAllRooms",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8081/rooms",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rooms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchMeetingsByRoomId",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8081/rooms/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"rooms",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateMeeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"roomId\": 3,\r\n  \"meetingId\":12,\r\n  \"meetingTitle\": \"meeting 3\",\r\n  \"startTime\": \"2002-01-29 10:36:33\",\r\n  \"endTime\":\"2002-01-29 10:45:33\",\r\n  \"userName\": \"ankisriv\",\r\n  \"bookingStatus\": \"Booked\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "bookMeeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"roomId\": 3,\r\n  \"meetingId\":0,\r\n  \"meetingTitle\": \"meeting 3\",\r\n  \"startTime\": \"2002-01-29 10:36:33\",\r\n  \"endTime\":\"2002-01-29 10:45:33\",\r\n  \"userName\": \"ankisriv\",\r\n  \"bookingStatus\": \"Booked\"\r\n}"
+				},
+				"url": {
+					"raw": "localhost:8081/book",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"book"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteMeeting",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "localhost:8081/deleteBooking?meetingId=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"deleteBooking"
+					],
+					"query": [
+						{
+							"key": "meetingId",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
